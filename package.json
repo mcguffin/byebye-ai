@@ -1,0 +1,97 @@
+{
+  "name": "byebye-ai",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "author": "mcguffin",
+  "license": "GPL-3.0-or-later",
+  "engines": {},
+  "scripts": {
+    "audit": "./vendor/squizlabs/php_codesniffer/bin/phpcs . --report=code --standard=./phpcs-security.ruleset.xml -n -s > ./phpcs-report.txt || exit 0",
+    "audit-fix": "./vendor/squizlabs/php_codesniffer/bin/phpcbf . --standard=./phpcs.ruleset.xml || exit 0",
+    "postinstall": "composer install",
+    "dashicons": "node ./src/run/dashicons.js",
+    "init": "mkdir -p json/acf && mkdir -p json/post-type && mkdir -p json/taxonomy && mkdir -p src/php",
+    "dev": "gulp dev",
+    "i18n": "node src/run/json-i18n.js byebye-ai",
+    "setversion": "PVER=$(node -e \"console.log(require('./package.json').version);\") && echo \"<?php return '$PVER';\" > ./include/version.php",
+    "rollback": "git reset --hard HEAD~ && git push origin +master"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "> 0.125%"
+  ],
+  "browserify-shim": {
+    "jquery": "global:jQuery",
+    "backbone": "global:Backbone"
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/plugin-proposal-class-properties": "*",
+    "@babel/plugin-proposal-object-rest-spread": "*",
+    "@babel/plugin-transform-react-jsx": "*",
+    "@babel/preset-env": "*",
+    "babelify": "*",
+    "browserify": "*",
+    "browserify-shim": "*",
+    "gulp": "*",
+    "event-stream": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "uglifyify": "*",
+    "vinyl-buffer": "*",
+    "vinyl-source-stream": "*",
+    "sass": "*",
+    "tinyify": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcguffin/byebye-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mcguffin/byebye-ai/issues"
+  },
+  "wpSkeleton": {
+    "components": {
+      "core": {
+        "components": [],
+        "flags": []
+      },
+      "settings": {
+        "components": {
+          "reading": {
+            "flags": []
+          }
+        },
+        "flags": []
+      },
+      "cli": {
+        "components": {
+          "byebye-ai-update": {
+            "flags": []
+          }
+        },
+        "flags": []
+      },
+      "cron": {
+        "components": {},
+        "flags": []
+      },
+      "git": {
+        "user": "mcguffin",
+        "remote": "git@github.com:mcguffin/byebye-ai.git"
+      }
+    },
+    "type": "plugin",
+    "name": "Byebye AI",
+    "slug": "byebye-ai",
+    "prefix": "byebye_ai",
+    "textdomain": "byebye-ai",
+    "namespace": "ByebyeAI",
+    "author": "mcguffin",
+    "author_uri": "https://github.com/mcguffin",
+    "year": 2025
+  }
+}
