@@ -7,7 +7,7 @@
 
 namespace ByebyeAI\Core;
 
-class Plugin extends Singleton implements ComponentInterface {
+class Plugin extends Singleton {
 
 	/** @var string plugin prefix */
 	private $plugin_prefix = 'byebye_ai';
@@ -37,8 +37,6 @@ class Plugin extends Singleton implements ComponentInterface {
 		register_activation_hook( $this->get_plugin_file(), [ $this, 'activate' ] );
 		register_deactivation_hook( $this->get_plugin_file(), [ $this, 'deactivate' ] );
 		register_uninstall_hook( $this->get_plugin_file(), [ __CLASS__, 'uninstall' ] );
-
-		add_action( 'admin_init', [ $this, 'maybe_upgrade' ] );
 
 		add_action( 'plugins_loaded' , [ $this , 'load_textdomain' ] );
 

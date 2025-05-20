@@ -7,11 +7,6 @@
 
 namespace ByebyeAI\Cron;
 
-if ( ! defined('ABSPATH') ) {
-	die('FU!');
-}
-
-
 use ByebyeAI\Core;
 
 /**
@@ -27,7 +22,9 @@ use ByebyeAI\Core;
  *	$job = Cron\Cron::getJob( 'same_unique_hook', 'callback', [ 'callback', 'args' ] );
  *	$job->stop();
  */
-class Cron extends Core\Singleton implements Core\ComponentInterface {
+class Cron extends Core\Singleton {
+
+	private $jobs;
 
 	/**
 	 *	@param	string		$hook

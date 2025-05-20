@@ -7,10 +7,6 @@
 
 namespace ByebyeAI\WPCLI;
 
-if ( ! defined('ABSPATH') ) {
-	die('FU!');
-}
-
 use ByebyeAI\Core;
 
 class WPCLI extends Core\Singleton {
@@ -19,11 +15,18 @@ class WPCLI extends Core\Singleton {
 	 *	@inheritdoc
 	 */
 	protected function __construct() {
-		\WP_CLI::add_command( 'byebye-ai-update', [ new Commands\ByebyeAiUpdate(), 'bark' ], [
+		\WP_CLI::add_command( 'byebye-ai sync', [ new Commands\ByebyeAISync(), 'sync' ], [
 //			'before_invoke'	=> 'a_callable',
 //			'after_invoke'	=> 'another_callable',
-			'shortdesc'		=> 'Byebye AI commands',
+			'shortdesc'		=> 'Update AI blocklist from https://github.com/ai-robots-txt/ai.robots.txt',
 //			'when'			=> 'before_wp_load',
+			'is_deferred'	=> false,
+		] );
+		\WP_CLI::add_command( 'byebye-ai reset', [ new Commands\ByebyeAISync(), 'reset' ], [
+	//			'before_invoke'	=> 'a_callable',
+	//			'after_invoke'	=> 'another_callable',
+			'shortdesc'		=> 'Reset plugin to factory default',
+	//			'when'			=> 'before_wp_load',
 			'is_deferred'	=> false,
 		] );
 	}

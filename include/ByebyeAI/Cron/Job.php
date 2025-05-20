@@ -7,11 +7,6 @@
 
 namespace ByebyeAI\Cron;
 
-if ( ! defined('ABSPATH') ) {
-	die('FU!');
-}
-
-
 class Job {
 
 	/**

@@ -7,9 +7,6 @@
 
 namespace ByebyeAI\Core;
 
-if ( ! defined('ABSPATH') ) {
-	die('FU!');
-}
 
 
 abstract class Singleton {

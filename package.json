@@ -69,7 +69,7 @@
       },
       "cli": {
         "components": {
-          "byebye-ai-update": {
+          "byebye-ai-sync": {
             "flags": []
           }
         },
@@ -93,5 +93,32 @@
     "author": "mcguffin",
     "author_uri": "https://github.com/mcguffin",
     "year": 2025
+  },
+  "wporg": {
+    "steps": [
+      "test",
+      "git",
+      "github",
+      "pack"
+    ],
+    "type": "plugin",
+    "build": {
+      "prebuild": [
+        "wp i18n make-pot . languages/byebye-ai.pot --domain=byebye-ai --exclude=tmp"
+      ],
+      "build": []
+    },
+    "test": [
+      "wp plugin deactivate byebye-ai --context=admin",
+      "wp plugin activate byebye-ai --context=admin"
+    ],
+    "git": {
+      "host": "github.com",
+      "user": "mcguffin"
+    },
+    "wporg": {
+      "assets": ".wporg",
+      "svn_user": "podpirate"
+    }
   }
 }
