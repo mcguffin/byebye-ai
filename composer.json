@@ -1,0 +1,38 @@
+{
+  "name": "mcguffin/byebye-ai",
+  "description": "WordPress Plugin to prevent AI bots from crawling your website.",
+  "type": "wordpress-plugin",
+  "minimum-stability": "dev",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/mcguffin/byebye-ai",
+  "keywords": [
+    "WordPress",
+	"Plugin",
+	"AI Blocker",
+	"robots.txt",
+	".htaccess"
+  ],
+  "authors": [
+    {
+      "name": "Jörn Lund"
+    }
+  ],
+  "require": {
+      "composer/installers": "~1.2",
+	  "php": ">=7.4.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "wp-coding-standards/wpcs": "*",
+    "phpcompatibility/php-compatibility": "*",
+	"pheromone/phpcs-security-audit":"*"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "[ -f vendor/bin/phpcs ] && \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/pheromone/phpcs-security-audit || true"
+    ],
+    "post-update-cmd": [
+      "[ -f vendor/bin/phpcs ] && \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/pheromone/phpcs-security-audit || true"
+    ]
+  }
+}
