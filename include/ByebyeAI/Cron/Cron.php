@@ -168,7 +168,7 @@ class Cron extends Core\Singleton {
 	 *	@filter cron_schedules
 	 */
 	public function cron_schedules( $schedules ) {
-		return $schedules + get_option('byebye_ai_cronschedules');
+		return $schedules + (array) get_option('byebye_ai_cronschedules');
 	}
 
 	/**

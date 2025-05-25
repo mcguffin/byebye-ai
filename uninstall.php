@@ -1,15 +1,9 @@
 <?php
 
 namespace ByebyeAI;
-
 use ByebyeAI\Core;
 
-delete_option( 'byebye_ai_enbled' );
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'include/autoload.php';
 
-// reset htaccess
-Core\Core::instance()->apply_settings();
-
-// kill options
-delete_option( 'byebye_ai_htaccess' );
-delete_option( 'byebye_ai_enbled' );
-delete_option( 'byebye_ai_updated' );
+Core\Core::instance( __DIR__ . DIRECTORY_SEPARATOR . 'index.php' );
+Core\Plugin::uninstall();
