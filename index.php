@@ -12,7 +12,7 @@ Requires WP: 5.0
 Requires PHP: 8.0
 Text Domain: byebye-ai
 Domain Path: /languages/
-Update URI: https://github.com/mcguffin/byebye-ai/raw/master/.wp-release-info.json
+Update URI: https://github.com/mcguffin/byebye-ai/raw/main/.wp-release-info.json
 */
 
 /*  Copyright 2025 mcguffin

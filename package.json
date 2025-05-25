@@ -1,6 +1,6 @@
 {
   "name": "byebye-ai",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "private": true,
   "author": "mcguffin",
@@ -80,6 +80,7 @@
     ],
     "type": "plugin",
     "build": {
+      "versionedFiles": null,
       "prebuild": [
         "wp i18n make-pot . languages/byebye-ai.pot --domain=byebye-ai --exclude=tmp"
       ],

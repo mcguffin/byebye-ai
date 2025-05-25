@@ -1,0 +1,9 @@
+{
+  "id": "https://github.com/mcguffin/byebye-ai/raw/main/.wp-release-info.json",
+  "slug": "byebye-ai",
+  "version": "0.0.1",
+  "url": "https://github.com/mcguffin/byebye-a",
+  "package": "https://github.com/mcguffin/byebye-ai/releases/download/0.0.1/byebye-ai.zip",
+  "tested": "4.9",
+  "requires_php": "5.3"
+}
