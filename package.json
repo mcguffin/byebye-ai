@@ -21,30 +21,8 @@
     "last 3 versions",
     "> 0.125%"
   ],
-  "browserify-shim": {
-    "jquery": "global:jQuery",
-    "backbone": "global:Backbone"
-  },
-  "devDependencies": {
-    "@babel/core": "*",
-    "@babel/plugin-proposal-class-properties": "*",
-    "@babel/plugin-proposal-object-rest-spread": "*",
-    "@babel/plugin-transform-react-jsx": "*",
-    "@babel/preset-env": "*",
-    "babelify": "*",
-    "browserify": "*",
-    "browserify-shim": "*",
-    "gulp": "*",
-    "event-stream": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-sass": "*",
-    "gulp-sourcemaps": "*",
-    "uglifyify": "*",
-    "vinyl-buffer": "*",
-    "vinyl-source-stream": "*",
-    "sass": "*",
-    "tinyify": "*"
-  },
+  "browserify-shim": {},
+  "devDependencies": {},
   "dependencies": {},
   "repository": {
     "type": "git",
@@ -96,10 +74,9 @@
   },
   "wporg": {
     "steps": [
-      "test",
+      "build",
       "git",
-      "github",
-      "pack"
+      "github"
     ],
     "type": "plugin",
     "build": {

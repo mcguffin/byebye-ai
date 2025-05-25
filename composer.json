@@ -18,14 +18,13 @@
     }
   ],
   "require": {
-      "composer/installers": "~1.2",
-	  "php": ">=7.4.0"
+	  "composer/installers": "~1.2"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "*",
+	"squizlabs/php_codesniffer": "*",
     "wp-coding-standards/wpcs": "*",
     "phpcompatibility/php-compatibility": "*",
-	"pheromone/phpcs-security-audit":"*"
+  	"pheromone/phpcs-security-audit":"*"
   },
   "scripts": {
     "post-install-cmd": [
@@ -34,5 +33,11 @@
     "post-update-cmd": [
       "[ -f vendor/bin/phpcs ] && \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/pheromone/phpcs-security-audit || true"
     ]
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }

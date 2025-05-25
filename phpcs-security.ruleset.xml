@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<ruleset name="BSB-WordPress-Security">
+
+	<!-- Set a description for this ruleset. -->
+	<description>A WordPress Ruleset to check application safety.</description>
+
+	<exclude-pattern>assets/*</exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>test/*</exclude-pattern>
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>*.js</exclude-pattern>
+	<exclude-pattern>*.css</exclude-pattern>
+
+	<rule ref="Generic.PHP.Syntax"/>
+
+	<!-- Check PHP Compatibility -->
+	<config name="testVersion" value="8.1-"/>
+
+	<!-- Include the WordPress ruleset, with exclusions. -->
+	<rule ref="WordPress.CodeAnalysis">
+	</rule>
+	<rule ref="WordPress.DB">
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<!-- common frameworks -->
+				<element value="ByebyeAI"/>
+				<element value="byebye_ai_"/>
+				<!--
+					SCHULCMS: Hier den eigenen Präfix für Funktionen & Klassen eintragen.
+				-->
+			</property>
+		</properties>
+	</rule>
+	<rule ref="WordPress.PHP">
+		<!-- omit non security sniffs -->
+		<exclude name="WordPress.PHP.DontExtract"/>
+		<exclude name="WordPress.PHP.YodaConditions"/>
+	</rule>
+	<rule ref="WordPress.Security">
+	</rule>
+	<rule ref="WordPress.Security.EscapeOutput">
+		<properties>
+			<property name="customEscapingFunctions" type="array">
+				<!-- l10n functions -->
+				<element value="__"/>
+				<element value="_x"/>
+				<element value="_n"/>
+				<!-- wp template tags -->
+				<element value="get_the_*"/>
+				<!-- acf escaping functions -->
+				<element value="acf_esc_*"/>
+				<!--
+					SCHULCMS: Hier ist Platz für eigene Escaping-Funktionen.
+					Die angepasste Datei zur Prüfung bitte mitschicken.
+				-->
+			</property>
+		</properties>
+    </rule>
+	<rule ref="WordPress.Utils">
+	</rule>
+	<rule ref="WordPress.WP">
+		<exclude name="WordPress.WP.I18n"/>
+	</rule>
+</ruleset>

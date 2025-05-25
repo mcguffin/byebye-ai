@@ -57,7 +57,7 @@ class Reading extends Core\Singleton {
 						<?php
 						printf(
 							'<a class="button" href="%s">%s</a>',
-							wp_nonce_url( $deactivate_url, 'deactivate-plugin_' . $plugin_file ),
+							esc_url( wp_nonce_url( $deactivate_url, 'deactivate-plugin_' . $plugin_file ) ),
 							_x( 'Deactivate Plugin', 'plugin' )
 						);
 						?>
@@ -80,8 +80,8 @@ class Reading extends Core\Singleton {
 				?>
 				<fieldset>
 					<legend class="screen-reader-text"><span><?php esc_html_e( 'AI visibility',  'byebye-ai' ); ?></span></legend>
-					<label for="<?php echo $option_name ?>">
-						<input type="checkbox" id="<?php echo $option_name ?>" name="<?php echo $option_name ?>" value="1" <?php checked( $option_value, 1, true ); ?> />
+					<label for="<?php echo esc_attr( $option_name ) ?>">
+						<input type="checkbox" id="<?php echo esc_attr( $option_name ); ?>" name="<?php echo esc_attr( $option_name ); ?>" value="1" <?php checked( $option_value, 1, true ); ?> />
 						<?php
 						if ( $this->core->can_write_htaccess() ) {
 							esc_html_e( 'Prevent AI bots from crawling this site', 'byebye-ai' );
