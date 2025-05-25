@@ -129,8 +129,12 @@ class Reading extends Core\Singleton {
 		delete_option( 'byebye_ai_htaccess' );
 		delete_option( 'byebye_ai_enbled' );
 		delete_option( 'byebye_ai_updated' );
-
+		// reset htaccess
 		$this->core->apply_settings();
+		return [
+			'success'	=> true,
+			'messages'	=> [],
+		];
 	}
 
 	/**

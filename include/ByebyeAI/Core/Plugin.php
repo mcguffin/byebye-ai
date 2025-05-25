@@ -23,8 +23,8 @@ class Plugin extends Singleton {
 
 	/** @var string plugin components which might need upgrade */
 	private static $components = [
-		'ByebyeAI\Cron\Cron',
-		'ByebyeAI\Admin\Settings\Reading',
+		\ByebyeAI\Cron\Cron::class,
+		\ByebyeAI\Admin\Settings\Reading::class,
 	];
 
 	/**
@@ -36,7 +36,7 @@ class Plugin extends Singleton {
 
 		register_activation_hook( $this->get_plugin_file(), [ $this, 'activate' ] );
 		register_deactivation_hook( $this->get_plugin_file(), [ $this, 'deactivate' ] );
-		register_uninstall_hook( $this->get_plugin_file(), [ __CLASS__, 'uninstall' ] );
+		// register_uninstall_hook( $this->get_plugin_file(), [ __CLASS__, 'uninstall' ] );
 
 		add_action( 'plugins_loaded' , [ $this , 'load_textdomain' ] );
 
