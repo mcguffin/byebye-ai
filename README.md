@@ -52,7 +52,7 @@ despite the AI Booster’s claims [neither artificial nor intelligent](https://e
 being deployed in order to replace human care labor, regardless of being appropriate 
 or not, no matter what community is stamped to the ground during the process.
 
-### All right … no so cool—in the present. But in the future we will &lt;insert scifi here&gt>!
+### All right … no so cool—in the present. But in the future we will &lt;insert scifi here&gt;!
 The future envisioned by the AI Boosters—and AI-Doomers as well—is bare of caring 
 human labor in most fields. 
 
